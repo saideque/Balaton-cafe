@@ -1,0 +1,93 @@
+{
+  "nav": {
+    "about": "O nas",
+    "menu": "Menu",
+    "gallery": "Galeria",
+    "visit": "Wizyta",
+    "contact": "Kontakt",
+    "reserve": "Znajdź nas"
+  },
+  "hero": {
+    "kicker": "Kawiarnia nad Jeziorkiem Balaton · Warszawa",
+    "title": "Kawa, gofry i cisza",
+    "titleAccent": "nad wodą",
+    "lede": "Mała kawiarnia na Gocławiu, tuż przy tafli Balatonu. Świeże wypieki, rzemieślnicza kawa i taras z widokiem na wodę.",
+    "ctaMenu": "Zobacz menu",
+    "ctaVisit": "Jak dojechać",
+    "scroll": "Przewiń",
+    "since": "Od 2019"
+  },
+  "about": {
+    "label": "O miejscu",
+    "title": "Spokojny brzeg w środku miasta",
+    "paragraph1": "Balaton Cafe powstało z prostej tęsknoty — za powolnym porankiem nad wodą, filiżanką dobrej kawy i ciepłą szarlotką. Nasza kawiarnia stoi nad warszawskim Jeziorkiem Balaton, gdzie miasto na chwilę cichnie.",
+    "paragraph2": "Pieczemy codziennie, parzymy z ziaren palonych lokalnie i podajemy gofry, których zapach niesie się aż na taras. Latem siadasz nad wodą, zimą — przy oknie z widokiem na pomost.",
+    "signature": "— Zespół Balatonu",
+    "stat1Value": "Codziennie",
+    "stat1Label": "Świeże wypieki",
+    "stat2Value": "11–21",
+    "stat2Label": "Otwarte 7 dni",
+    "stat3Value": "Nad wodą",
+    "stat3Label": "Taras z widokiem"
+  },
+  "menu": {
+    "label": "Karta",
+    "title": "Co podajemy",
+    "intro": "Krótka, sezonowa karta. Ceny w złotówkach.",
+    "tagSignature": "nasz klasyk",
+    "tagNew": "nowość",
+    "tagSeasonal": "sezonowe",
+    "note": "Pełna karta dostępna na miejscu. Pytaj o ofertę dnia."
+  },
+  "gallery": {
+    "label": "Galeria",
+    "title": "Chwila nad Balatonem",
+    "intro": "Kadry z kawiarni, talerza i tarasu."
+  },
+  "visit": {
+    "label": "Wizyta",
+    "title": "Wpadnij nad wodę",
+    "hoursTitle": "Godziny otwarcia",
+    "addressTitle": "Adres",
+    "contactTitle": "Kontakt",
+    "everyday": "Poniedziałek – Niedziela",
+    "openNow": "Otwarte teraz",
+    "closedNow": "Zamknięte",
+    "opensAt": "Otwieramy o {time}",
+    "closesAt": "do {time}",
+    "directions": "Wyznacz trasę",
+    "callUs": "Zadzwoń",
+    "followUs": "Obserwuj"
+  },
+  "contact": {
+    "label": "Kontakt",
+    "title": "Napisz do nas",
+    "intro": "Pytanie o rezerwację stolika, urodziny albo zamówienie tortu? Zostaw wiadomość — odpiszemy.",
+    "name": "Imię",
+    "namePlaceholder": "Jak masz na imię?",
+    "email": "E-mail",
+    "emailPlaceholder": "ty@przyklad.pl",
+    "message": "Wiadomość",
+    "messagePlaceholder": "W czym możemy pomóc?",
+    "send": "Wyślij wiadomość",
+    "sending": "Wysyłanie…",
+    "success": "Dziękujemy! Odezwiemy się wkrótce.",
+    "error": "Coś poszło nie tak. Spróbuj ponownie.",
+    "errName": "Podaj imię.",
+    "errEmail": "Podaj poprawny adres e-mail.",
+    "errMessage": "Napisz krótką wiadomość.",
+    "newsletterTitle": "Powolny newsletter",
+    "newsletterText": "Sezonowe smaki i kameralne wydarzenia. Bez spamu.",
+    "newsletterPlaceholder": "Twój e-mail",
+    "subscribe": "Zapisz się",
+    "subscribed": "Zapisano!"
+  },
+  "footer": {
+    "tagline": "Kawa, gofry i cisza nad wodą.",
+    "explore": "Nawigacja",
+    "visitUs": "Odwiedź nas",
+    "rights": "Wszelkie prawa zastrzeżone.",
+    "madeWith": "Z miłości do powolnych poranków",
+    "backToTop": "Do góry"
+  }
+}

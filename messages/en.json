@@ -1,0 +1,93 @@
+{
+  "nav": {
+    "about": "About",
+    "menu": "Menu",
+    "gallery": "Gallery",
+    "visit": "Visit",
+    "contact": "Contact",
+    "reserve": "Find us"
+  },
+  "hero": {
+    "kicker": "Café by the Balaton pond · Warsaw",
+    "title": "Coffee, waffles & calm",
+    "titleAccent": "by the water",
+    "lede": "A small café in Gocław, right on the edge of the Balaton pond. Fresh bakes, craft coffee and a deck that looks out over the water.",
+    "ctaMenu": "See the menu",
+    "ctaVisit": "How to find us",
+    "scroll": "Scroll",
+    "since": "Since 2019"
+  },
+  "about": {
+    "label": "The place",
+    "title": "A quiet shore in the middle of the city",
+    "paragraph1": "Balaton Cafe began with a simple longing — for a slow morning by the water, a good cup of coffee and a warm slice of apple cake. Our café sits on Warsaw's Balaton pond, where the city goes quiet for a while.",
+    "paragraph2": "We bake every day, brew beans roasted locally, and serve waffles whose scent drifts all the way to the deck. In summer you sit by the water; in winter, by the window with a view of the pier.",
+    "signature": "— The Balaton team",
+    "stat1Value": "Daily",
+    "stat1Label": "Fresh bakes",
+    "stat2Value": "11–21",
+    "stat2Label": "Open 7 days",
+    "stat3Value": "Waterside",
+    "stat3Label": "Deck with a view"
+  },
+  "menu": {
+    "label": "The menu",
+    "title": "What we serve",
+    "intro": "A short, seasonal menu. Prices in złoty.",
+    "tagSignature": "house classic",
+    "tagNew": "new",
+    "tagSeasonal": "seasonal",
+    "note": "Full menu available in the café. Ask about today's special."
+  },
+  "gallery": {
+    "label": "Gallery",
+    "title": "A moment by the Balaton",
+    "intro": "Frames from the café, the plate and the deck."
+  },
+  "visit": {
+    "label": "Visit",
+    "title": "Come down to the water",
+    "hoursTitle": "Opening hours",
+    "addressTitle": "Address",
+    "contactTitle": "Contact",
+    "everyday": "Monday – Sunday",
+    "openNow": "Open now",
+    "closedNow": "Closed",
+    "opensAt": "Opens at {time}",
+    "closesAt": "until {time}",
+    "directions": "Get directions",
+    "callUs": "Call us",
+    "followUs": "Follow"
+  },
+  "contact": {
+    "label": "Contact",
+    "title": "Drop us a line",
+    "intro": "A question about a table, a birthday, or a custom cake order? Leave a message — we'll get back to you.",
+    "name": "Name",
+    "namePlaceholder": "What's your name?",
+    "email": "Email",
+    "emailPlaceholder": "you@example.com",
+    "message": "Message",
+    "messagePlaceholder": "How can we help?",
+    "send": "Send message",
+    "sending": "Sending…",
+    "success": "Thank you! We'll be in touch soon.",
+    "error": "Something went wrong. Please try again.",
+    "errName": "Please enter your name.",
+    "errEmail": "Please enter a valid email address.",
+    "errMessage": "Please write a short message.",
+    "newsletterTitle": "The slow newsletter",
+    "newsletterText": "Seasonal flavours and small events. No spam.",
+    "newsletterPlaceholder": "Your email",
+    "subscribe": "Subscribe",
+    "subscribed": "Subscribed!"
+  },
+  "footer": {
+    "tagline": "Coffee, waffles & calm by the water.",
+    "explore": "Explore",
+    "visitUs": "Visit us",
+    "rights": "All rights reserved.",
+    "madeWith": "Made for slow mornings",
+    "backToTop": "Back to top"
+  }
+}
