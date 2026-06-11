@@ -4,7 +4,6 @@
     "menu": "Menu",
     "gallery": "Galeria",
     "visit": "Wizyta",
-    "contact": "Kontakt",
     "reserve": "Znajdź nas"
   },
   "hero": {
@@ -33,7 +32,7 @@
   "menu": {
     "label": "Karta",
     "title": "Co podajemy",
-    "intro": "Krótka, sezonowa karta. Ceny w złotówkach.",
+    "intro": "Pełna karta prosto z naszej tablicy. Ceny w złotówkach.",
     "tagSignature": "nasz klasyk",
     "tagNew": "nowość",
     "tagSeasonal": "sezonowe",
@@ -58,29 +57,6 @@
     "directions": "Wyznacz trasę",
     "callUs": "Zadzwoń",
     "followUs": "Obserwuj"
-  },
-  "contact": {
-    "label": "Kontakt",
-    "title": "Napisz do nas",
-    "intro": "Pytanie o rezerwację stolika, urodziny albo zamówienie tortu? Zostaw wiadomość — odpiszemy.",
-    "name": "Imię",
-    "namePlaceholder": "Jak masz na imię?",
-    "email": "E-mail",
-    "emailPlaceholder": "ty@przyklad.pl",
-    "message": "Wiadomość",
-    "messagePlaceholder": "W czym możemy pomóc?",
-    "send": "Wyślij wiadomość",
-    "sending": "Wysyłanie…",
-    "success": "Dziękujemy! Odezwiemy się wkrótce.",
-    "error": "Coś poszło nie tak. Spróbuj ponownie.",
-    "errName": "Podaj imię.",
-    "errEmail": "Podaj poprawny adres e-mail.",
-    "errMessage": "Napisz krótką wiadomość.",
-    "newsletterTitle": "Powolny newsletter",
-    "newsletterText": "Sezonowe smaki i kameralne wydarzenia. Bez spamu.",
-    "newsletterPlaceholder": "Twój e-mail",
-    "subscribe": "Zapisz się",
-    "subscribed": "Zapisano!"
   },
   "footer": {
     "tagline": "Kawa, gofry i cisza nad wodą.",

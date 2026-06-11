@@ -4,7 +4,6 @@
     "menu": "Menu",
     "gallery": "Gallery",
     "visit": "Visit",
-    "contact": "Contact",
     "reserve": "Find us"
   },
   "hero": {
@@ -33,7 +32,7 @@
   "menu": {
     "label": "The menu",
     "title": "What we serve",
-    "intro": "A short, seasonal menu. Prices in złoty.",
+    "intro": "The full menu straight from our board. Prices in złoty.",
     "tagSignature": "house classic",
     "tagNew": "new",
     "tagSeasonal": "seasonal",
@@ -58,29 +57,6 @@
     "directions": "Get directions",
     "callUs": "Call us",
     "followUs": "Follow"
-  },
-  "contact": {
-    "label": "Contact",
-    "title": "Drop us a line",
-    "intro": "A question about a table, a birthday, or a custom cake order? Leave a message — we'll get back to you.",
-    "name": "Name",
-    "namePlaceholder": "What's your name?",
-    "email": "Email",
-    "emailPlaceholder": "you@example.com",
-    "message": "Message",
-    "messagePlaceholder": "How can we help?",
-    "send": "Send message",
-    "sending": "Sending…",
-    "success": "Thank you! We'll be in touch soon.",
-    "error": "Something went wrong. Please try again.",
-    "errName": "Please enter your name.",
-    "errEmail": "Please enter a valid email address.",
-    "errMessage": "Please write a short message.",
-    "newsletterTitle": "The slow newsletter",
-    "newsletterText": "Seasonal flavours and small events. No spam.",
-    "newsletterPlaceholder": "Your email",
-    "subscribe": "Subscribe",
-    "subscribed": "Subscribed!"
   },
   "footer": {
     "tagline": "Coffee, waffles & calm by the water.",

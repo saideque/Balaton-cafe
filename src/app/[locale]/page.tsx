@@ -5,14 +5,14 @@ import { About } from '@/components/About';
 import { Menu } from '@/components/Menu';
 import { Gallery } from '@/components/Gallery';
 import { Visit } from '@/components/Visit';
-import { Contact } from '@/components/Contact';
 import { Footer } from '@/components/Footer';
 
-export default function Home({
-  params: { locale },
+export default async function Home({
+  params,
 }: {
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   setRequestLocale(locale);
 
   return (
@@ -24,7 +24,6 @@ export default function Home({
         <Menu />
         <Gallery />
         <Visit />
-        <Contact />
       </main>
       <Footer />
     </>

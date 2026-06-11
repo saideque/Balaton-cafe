@@ -1,4 +1,5 @@
 import type { Localized } from './localize';
+import { photos } from './photos';
 
 export interface GalleryImage {
   src: string;
@@ -7,53 +8,50 @@ export interface GalleryImage {
   span: 'tall' | 'wide' | 'square';
 }
 
+/**
+ * Five tiles pack the 4-column mosaic exactly:
+ * row 1 — wide (2) + tall (1, spans 2 rows) + square (1)
+ * row 2 — wide (2) + square (1) + tall continuation (1)
+ */
 export const gallery: GalleryImage[] = [
   {
-    src: '/images/hero-lakeside.png',
+    src: photos.hero,
     alt: {
-      pl: 'Taras kawiarni nad Jeziorkiem Balaton o zachodzie słońca',
-      en: 'Café deck by the Balaton pond at sunset',
+      pl: 'Balaton Cafe nad Jeziorkiem Balaton o złotej godzinie',
+      en: 'Balaton Cafe on the Balaton pond at golden hour',
     },
     span: 'wide',
   },
   {
-    src: '/images/latte-art.png',
+    src: photos.food,
     alt: {
-      pl: 'Flat white z latte art w kamionkowym kubku',
-      en: 'Flat white with latte art in a stoneware cup',
+      pl: 'Kawałek tortu pistacjowego i frappe z bitą śmietaną',
+      en: 'A slice of pistachio cake and a frappe with whipped cream',
     },
     span: 'tall',
   },
   {
-    src: '/images/waffle.png',
+    src: photos.momentWaffle,
     alt: {
-      pl: 'Gofr z owocami i bitą śmietaną',
-      en: 'Waffle with fresh fruit and whipped cream',
+      pl: 'Mrożona kawa i gofr z kremem czekoladowym nad wodą',
+      en: 'Iced coffee and a chocolate-spread waffle by the water',
     },
     span: 'square',
   },
   {
-    src: '/images/interior.png',
+    src: photos.interior2,
     alt: {
-      pl: 'Minimalistyczne wnętrze kawiarni z widokiem na wodę',
-      en: 'Minimal café interior with a view of the water',
+      pl: 'Neonowy rożek lodowy i lada kawiarni',
+      en: 'Neon ice-cream cone sign and the café counter',
     },
     span: 'wide',
   },
   {
-    src: '/images/apple-cake.png',
+    src: photos.momentBeer,
     alt: {
-      pl: 'Kawałek ciepłej szarlotki na talerzu',
-      en: 'A slice of warm apple cake on a plate',
+      pl: 'Piwo i nachos z dipami na tarasie nad jeziorkiem',
+      en: 'Beer and nachos with dips on the lakeside deck',
     },
     span: 'square',
-  },
-  {
-    src: '/images/lifestyle.png',
-    alt: {
-      pl: 'Cappuccino i sernik na drewnianym stole przy oknie',
-      en: 'Cappuccino and cheesecake on a wooden table by the window',
-    },
-    span: 'tall',
   },
 ];

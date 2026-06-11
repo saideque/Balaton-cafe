@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { Fraunces, Hanken_Grotesk } from 'next/font/google';
+import { Plus_Jakarta_Sans, Hanken_Grotesk } from 'next/font/google';
 import { NextIntlClientProvider } from 'next-intl';
 import {
   getMessages,
@@ -9,12 +9,12 @@ import {
 } from 'next-intl/server';
 import { routing, type Locale } from '@/../i18n/routing';
 import { site } from '@/content/site';
+import { photos } from '@/content/photos';
 import './globals.css';
 
 // Both are variable fonts — omitting `weight` loads the full weight range.
-const display = Fraunces({
+const display = Plus_Jakarta_Sans({
   subsets: ['latin', 'latin-ext'],
-  style: ['normal', 'italic'],
   variable: '--font-display',
   display: 'swap',
 });
@@ -30,10 +30,11 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata({
-  params: { locale },
+  params,
 }: {
-  params: { locale: Locale };
+  params: Promise<{ locale: Locale }>;
 }): Promise<Metadata> {
+  const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'hero' });
   const title = `${site.name} — ${
     locale === 'pl' ? 'Kawiarnia nad wodą w Warszawie' : 'Lakeside café in Warsaw'
@@ -56,24 +57,25 @@ export async function generateMetadata({
       type: 'website',
       locale: locale === 'pl' ? 'pl_PL' : 'en_GB',
       siteName: site.name,
-      images: [{ url: '/images/hero-lakeside.png', width: 1376, height: 768 }],
+      images: [{ url: photos.hero, width: 1280, height: 720 }],
     },
     twitter: {
       card: 'summary_large_image',
       title,
       description: t('lede'),
-      images: ['/images/hero-lakeside.png'],
+      images: [photos.hero],
     },
   };
 }
 
 export default async function LocaleLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
+  const { locale } = await params;
   if (!routing.locales.includes(locale as Locale)) {
     notFound();
   }
@@ -85,7 +87,7 @@ export default async function LocaleLayout({
     '@context': 'https://schema.org',
     '@type': 'CafeOrCoffeeShop',
     name: site.name,
-    image: 'https://balatoncafe.pl/images/hero-lakeside.png',
+    image: `https://balatoncafe.pl${photos.hero}`,
     address: {
       '@type': 'PostalAddress',
       streetAddress: site.address.street,
@@ -109,7 +111,6 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} className={`${display.variable} ${sans.variable}`}>
       <body>
-        <div className="grain" aria-hidden="true" />
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>

@@ -6,7 +6,6 @@ import { MapPin, Phone, Clock, ArrowUpRight, Instagram, Facebook } from 'lucide-
 import { site } from '@/content/site';
 import { getOpenState, type OpenState } from '@/lib/hours';
 import { Reveal } from './Reveal';
-import { SectionLabel } from './SectionLabel';
 
 export function Visit() {
   const t = useTranslations('visit');
@@ -20,14 +19,12 @@ export function Visit() {
   }, []);
 
   return (
-    <section id="visit" className="scroll-mt-24 border-t border-line bg-paper-2/40 py-24 sm:py-32 lg:py-40">
+    // Light closing section — the dark footer right after it is the page's
+    // single dark ending (gallery is forest, so cream here keeps the rhythm).
+    <section id="visit" className="scroll-mt-20 bg-cream py-24 sm:py-32">
       <div className="u-shell">
         <Reveal>
-          <SectionLabel index="04">{t('label')}</SectionLabel>
-        </Reveal>
-
-        <Reveal delay={0.05}>
-          <h2 className="mt-12 max-w-[18ch] text-[clamp(2rem,4.5vw,3.4rem)] leading-[1.05]">
+          <h2 className="max-w-[18ch] text-[clamp(2.2rem,4.5vw,3.6rem)] leading-[1.05] text-forest">
             {t('title')}
           </h2>
         </Reveal>
@@ -37,22 +34,24 @@ export function Visit() {
           <div className="flex flex-col gap-10">
             {/* Hours */}
             <div>
-              <div className="mb-4 flex items-center gap-2 text-ink-soft">
-                <Clock size={16} strokeWidth={1.5} />
-                <span className="u-label">{t('hoursTitle')}</span>
+              <div className="mb-4 flex items-center gap-2 text-forest">
+                <Clock size={16} strokeWidth={1.75} />
+                <span className="text-xs font-bold uppercase tracking-[0.18em]">
+                  {t('hoursTitle')}
+                </span>
               </div>
-              <p className="font-display text-2xl text-ink">{t('everyday')}</p>
+              <p className="text-2xl font-bold text-ink">{t('everyday')}</p>
               <p className="mt-1 text-lg text-ink-soft">
                 {site.hours.open} – {site.hours.close}
               </p>
-              <div className="mt-4 inline-flex items-center gap-2 text-sm">
+              <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold">
                 <span
                   className={`h-2 w-2 rounded-full ${
-                    state?.isOpen ? 'bg-sage' : 'bg-terracotta'
+                    state?.isOpen ? 'bg-forest' : 'bg-terracotta'
                   } ${state ? '' : 'opacity-0'}`}
                 />
                 {state && (
-                  <span className={state.isOpen ? 'text-sage-deep' : 'text-terracotta'}>
+                  <span className={state.isOpen ? 'text-forest' : 'text-terracotta'}>
                     {state.isOpen
                       ? `${t('openNow')} · ${t('closesAt', { time: state.closesAt })}`
                       : `${t('closedNow')} · ${t('opensAt', { time: state.opensAt })}`}
@@ -63,9 +62,11 @@ export function Visit() {
 
             {/* Address */}
             <div>
-              <div className="mb-4 flex items-center gap-2 text-ink-soft">
-                <MapPin size={16} strokeWidth={1.5} />
-                <span className="u-label">{t('addressTitle')}</span>
+              <div className="mb-4 flex items-center gap-2 text-forest">
+                <MapPin size={16} strokeWidth={1.75} />
+                <span className="text-xs font-bold uppercase tracking-[0.18em]">
+                  {t('addressTitle')}
+                </span>
               </div>
               <p className="text-lg leading-relaxed text-ink">
                 {site.address.street}
@@ -76,22 +77,24 @@ export function Visit() {
                 href={site.mapsLink}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-3 inline-flex items-center gap-1 text-sm text-sage-deep u-link"
+                className="u-pill mt-5 bg-forest text-cream hover:bg-forest-deep"
               >
                 {t('directions')}
-                <ArrowUpRight size={15} strokeWidth={1.5} />
+                <ArrowUpRight size={15} strokeWidth={2} />
               </a>
             </div>
 
             {/* Contact */}
             <div>
-              <div className="mb-4 flex items-center gap-2 text-ink-soft">
-                <Phone size={16} strokeWidth={1.5} />
-                <span className="u-label">{t('contactTitle')}</span>
+              <div className="mb-4 flex items-center gap-2 text-forest">
+                <Phone size={16} strokeWidth={1.75} />
+                <span className="text-xs font-bold uppercase tracking-[0.18em]">
+                  {t('contactTitle')}
+                </span>
               </div>
               <a
                 href={`tel:${site.phone.replace(/\s/g, '')}`}
-                className="text-lg text-ink u-link"
+                className="u-link text-lg text-ink"
               >
                 {site.phone}
               </a>
@@ -101,7 +104,7 @@ export function Visit() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Instagram"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink-soft transition-colors hover:border-ink hover:text-ink"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink-soft transition-colors hover:border-forest hover:text-forest"
                 >
                   <Instagram size={17} strokeWidth={1.5} />
                 </a>
@@ -110,7 +113,7 @@ export function Visit() {
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Facebook"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink-soft transition-colors hover:border-ink hover:text-ink"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-line text-ink-soft transition-colors hover:border-forest hover:text-forest"
                 >
                   <Facebook size={17} strokeWidth={1.5} />
                 </a>
@@ -120,13 +123,13 @@ export function Visit() {
 
           {/* Map */}
           <Reveal delay={0.1} y={30}>
-            <div className="relative h-[340px] overflow-hidden rounded-[2px] border border-line sm:h-[460px] lg:h-full lg:min-h-[460px]">
+            <div className="relative h-[340px] overflow-hidden rounded-3xl bg-white p-2 shadow-[0_12px_40px_rgba(27,27,27,0.08)] sm:h-[460px] lg:h-full lg:min-h-[460px]">
               <iframe
                 src={site.mapEmbedUrl}
                 title={`${site.name} — ${site.address.city}`}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                className="h-full w-full grayscale-[0.2]"
+                className="h-full w-full rounded-2xl"
                 style={{ border: 0 }}
               />
             </div>

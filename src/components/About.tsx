@@ -2,8 +2,8 @@
 
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
+import { photos } from '@/content/photos';
 import { Reveal } from './Reveal';
-import { SectionLabel } from './SectionLabel';
 
 export function About() {
   const t = useTranslations('about');
@@ -15,15 +15,11 @@ export function About() {
   ];
 
   return (
-    <section id="about" className="u-shell scroll-mt-24 py-24 sm:py-32 lg:py-40">
-      <Reveal>
-        <SectionLabel index="01">{t('label')}</SectionLabel>
-      </Reveal>
-
-      <div className="mt-12 grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
+    <section id="about" className="scroll-mt-20 bg-cream py-24 sm:py-32">
+      <div className="u-shell grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20">
         <div>
-          <Reveal delay={0.05}>
-            <h2 className="max-w-[16ch] text-[clamp(2rem,4.5vw,3.4rem)] leading-[1.05]">
+          <Reveal>
+            <h2 className="max-w-[16ch] text-[clamp(2.2rem,4.5vw,3.6rem)] leading-[1.05] text-forest">
               {t('title')}
             </h2>
           </Reveal>
@@ -39,17 +35,17 @@ export function About() {
             </p>
           </Reveal>
           <Reveal delay={0.2}>
-            <p className="mt-8 font-display text-xl italic text-sage-deep">
-              {t('signature')}
-            </p>
+            <p className="mt-8 font-semibold text-forest">{t('signature')}</p>
           </Reveal>
 
           <Reveal delay={0.25}>
-            <dl className="mt-12 grid grid-cols-3 divide-x divide-line border-y border-line">
+            <dl className="mt-12 grid grid-cols-3 gap-6">
               {stats.map((s) => (
-                <div key={s.label} className="px-4 py-6 first:pl-0">
-                  <dt className="font-display text-2xl text-ink sm:text-3xl">{s.value}</dt>
-                  <dd className="mt-1 text-xs uppercase tracking-[0.14em] text-ink-soft">
+                <div key={s.label} className="rounded-2xl bg-white p-5">
+                  <dt className="font-display text-xl font-extrabold text-forest sm:text-2xl">
+                    {s.value}
+                  </dt>
+                  <dd className="mt-1 text-xs font-semibold uppercase tracking-[0.12em] text-ink-soft">
                     {s.label}
                   </dd>
                 </div>
@@ -59,9 +55,10 @@ export function About() {
         </div>
 
         <Reveal delay={0.1} y={36}>
-          <figure className="relative aspect-[4/5] overflow-hidden rounded-[2px]">
+          {/* Real interior photo is landscape — 4/3 avoids a harsh crop. */}
+          <figure className="relative aspect-[4/3] overflow-hidden rounded-3xl bg-cream-2 lg:aspect-[4/3.4]">
             <Image
-              src="/images/interior.png"
+              src={photos.interior}
               alt=""
               fill
               sizes="(max-width: 1024px) 100vw, 48vw"

@@ -9,7 +9,6 @@ import { gallery } from '@/content/gallery';
 import { pick } from '@/content/localize';
 import type { Locale } from '@/../i18n/routing';
 import { Reveal } from './Reveal';
-import { SectionLabel } from './SectionLabel';
 
 const spanClass: Record<string, string> = {
   wide: 'md:col-span-2',
@@ -45,42 +44,42 @@ export function Gallery() {
   }, [open, close, step]);
 
   return (
-    <section id="gallery" className="u-shell scroll-mt-24 py-24 sm:py-32 lg:py-40">
-      <Reveal>
-        <SectionLabel index="03">{t('label')}</SectionLabel>
-      </Reveal>
+    <section id="gallery" className="scroll-mt-20 bg-forest py-24 text-cream sm:py-32">
+      <div className="u-shell">
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+          <Reveal>
+            <h2 className="text-[clamp(2.2rem,4.5vw,3.6rem)] leading-[1.05] text-cream">
+              {t('title')}
+            </h2>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <p className="max-w-[34ch] text-sm text-cream/70">{t('intro')}</p>
+          </Reveal>
+        </div>
 
-      <div className="mt-12 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
-        <Reveal delay={0.05}>
-          <h2 className="text-[clamp(2rem,4.5vw,3.4rem)] leading-[1.05]">{t('title')}</h2>
-        </Reveal>
         <Reveal delay={0.1}>
-          <p className="max-w-[34ch] text-sm text-ink-soft">{t('intro')}</p>
+          <div className="mt-12 grid auto-rows-[44vw] grid-cols-1 gap-3 sm:auto-rows-[230px] sm:grid-cols-2 md:auto-rows-[210px] md:grid-cols-4">
+            {gallery.map((img, i) => (
+              <button
+                key={img.src}
+                type="button"
+                onClick={() => setOpen(i)}
+                className={`group relative overflow-hidden rounded-2xl bg-forest-deep ${spanClass[img.span]}`}
+                aria-label={pick(img.alt, locale)}
+              >
+                <Image
+                  src={img.src}
+                  alt={pick(img.alt, locale)}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover transition-transform duration-700 ease-lake group-hover:scale-[1.05]"
+                />
+                <span className="absolute inset-0 bg-black/0 transition-colors duration-500 group-hover:bg-black/15" />
+              </button>
+            ))}
+          </div>
         </Reveal>
       </div>
-
-      <Reveal delay={0.1}>
-        <div className="mt-12 grid auto-rows-[44vw] grid-cols-1 gap-3 sm:auto-rows-[230px] sm:grid-cols-2 md:auto-rows-[210px] md:grid-cols-4">
-          {gallery.map((img, i) => (
-            <button
-              key={img.src}
-              type="button"
-              onClick={() => setOpen(i)}
-              className={`group relative overflow-hidden rounded-[2px] ${spanClass[img.span]}`}
-              aria-label={pick(img.alt, locale)}
-            >
-              <Image
-                src={img.src}
-                alt={pick(img.alt, locale)}
-                fill
-                sizes="(max-width: 768px) 100vw, 35vw"
-                className="object-cover transition-transform duration-700 ease-lake group-hover:scale-[1.05]"
-              />
-              <span className="absolute inset-0 bg-ink/0 transition-colors duration-500 group-hover:bg-ink/10" />
-            </button>
-          ))}
-        </div>
-      </Reveal>
 
       {/* Lightbox */}
       <AnimatePresence>
@@ -90,7 +89,7 @@ export function Gallery() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed inset-0 z-[60] flex items-center justify-center bg-ink/92 p-4 sm:p-10"
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-black/90 p-4 sm:p-10"
             onClick={close}
             role="dialog"
             aria-modal="true"
@@ -98,7 +97,9 @@ export function Gallery() {
             <button
               type="button"
               onClick={close}
-              className="absolute right-5 top-5 text-paper/80 transition-colors hover:text-paper"
+              // Move keyboard focus into the dialog when it opens.
+              autoFocus
+              className="absolute right-5 top-5 text-cream/80 transition-colors hover:text-cream"
               aria-label="Close"
             >
               <X size={28} strokeWidth={1.5} />
@@ -109,7 +110,7 @@ export function Gallery() {
                 e.stopPropagation();
                 step(-1);
               }}
-              className="absolute left-3 text-paper/70 transition-colors hover:text-paper sm:left-8"
+              className="absolute left-3 text-cream/70 transition-colors hover:text-cream sm:left-8"
               aria-label="Previous"
             >
               <ChevronLeft size={36} strokeWidth={1.25} />
@@ -120,7 +121,7 @@ export function Gallery() {
                 e.stopPropagation();
                 step(1);
               }}
-              className="absolute right-3 text-paper/70 transition-colors hover:text-paper sm:right-8"
+              className="absolute right-3 text-cream/70 transition-colors hover:text-cream sm:right-8"
               aria-label="Next"
             >
               <ChevronRight size={36} strokeWidth={1.25} />
@@ -143,7 +144,7 @@ export function Gallery() {
                   className="object-contain"
                 />
               </div>
-              <figcaption className="mt-4 text-center text-sm text-paper/70">
+              <figcaption className="mt-4 text-center text-sm text-cream/70">
                 {pick(gallery[open].alt, locale)}
               </figcaption>
             </motion.figure>

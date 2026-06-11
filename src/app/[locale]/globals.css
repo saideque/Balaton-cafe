@@ -3,14 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --paper: #faf6ee;
-  --paper-2: #f1e9da;
-  --ink: #211c16;
-  --ink-soft: #5a5040;
-  --sage: #5f6b53;
-  --sage-deep: #3c4634;
+  --cream: #f2f0eb;
+  --cream-2: #e8e4dc;
+  --forest: #1e3932;
+  --forest-deep: #00382b;
+  --gold: #cba258;
+  --ink: #1b1b1b;
+  --ink-soft: #595550;
   --terracotta: #c2703d;
-  --line: rgba(33, 28, 22, 0.14);
+  --line: rgba(27, 27, 27, 0.12);
 }
 
 @layer base {
@@ -24,33 +25,32 @@
   }
 
   body {
-    background-color: var(--paper);
+    background-color: var(--cream);
     color: var(--ink);
     font-family: var(--font-sans), system-ui, sans-serif;
-    font-feature-settings: 'ss01', 'cv01';
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     overflow-x: hidden;
   }
 
   ::selection {
-    background: var(--sage);
-    color: var(--paper);
+    background: var(--forest);
+    color: var(--cream);
   }
 
   h1,
   h2,
   h3 {
-    font-family: var(--font-display), Georgia, serif;
-    font-weight: 400;
-    letter-spacing: -0.012em;
+    font-family: var(--font-display), system-ui, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.025em;
     text-wrap: balance;
   }
 
   :focus-visible {
-    outline: 2px solid var(--sage);
+    outline: 2px solid var(--forest);
     outline-offset: 3px;
-    border-radius: 2px;
+    border-radius: 4px;
   }
 }
 
@@ -63,12 +63,23 @@
     padding-inline: clamp(1.25rem, 5vw, 4.5rem);
   }
 
-  /* Eyebrow / editorial label */
-  .u-label {
-    font-size: 0.7rem;
-    text-transform: uppercase;
-    letter-spacing: 0.24em;
-    color: var(--sage-deep);
+  /* Primary pill CTA */
+  .u-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    padding: 0.875rem 1.75rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition:
+      background-color 0.3s,
+      color 0.3s,
+      border-color 0.3s,
+      transform 0.3s;
+  }
+  .u-pill:hover {
+    transform: translateY(-2px);
   }
 
   /* Animated underline link */
@@ -92,17 +103,6 @@
     transform: scaleX(1);
     transform-origin: left;
   }
-}
-
-/* Paper grain overlay — fixed, non-interactive, sits above background */
-.grain {
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  pointer-events: none;
-  opacity: 0.05;
-  mix-blend-mode: multiply;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 /* Hide scrollbar on horizontal tab strips */

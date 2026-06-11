@@ -5,21 +5,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        paper: 'var(--paper)',
-        'paper-2': 'var(--paper-2)',
+        cream: 'var(--cream)',
+        'cream-2': 'var(--cream-2)',
+        forest: 'var(--forest)',
+        'forest-deep': 'var(--forest-deep)',
+        gold: 'var(--gold)',
         ink: 'var(--ink)',
         'ink-soft': 'var(--ink-soft)',
-        sage: 'var(--sage)',
-        'sage-deep': 'var(--sage-deep)',
         terracotta: 'var(--terracotta)',
         line: 'var(--line)',
       },
       fontFamily: {
-        display: ['var(--font-display)', 'Georgia', 'serif'],
+        display: ['var(--font-display)', 'system-ui', 'sans-serif'],
         sans: ['var(--font-sans)', 'system-ui', 'sans-serif'],
-      },
-      letterSpacing: {
-        label: '0.22em',
       },
       maxWidth: {
         shell: '1320px',
